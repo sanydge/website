@@ -1,8 +1,18 @@
-{%extends "layout.html"%}
+{%extends "layout.html" %}
 {%block content%}
 <div class="about">
     <h1>About</h1>
     <p>TEST TEST!!</p>
-    <p>This was added later</p>
+
+{% if display %}
+    {% for echipa in echipe %}
+        <h1>Nume echipa : {{  echipa.nume }}</h1>
+        <p>Marime  : {{  echipa.marime }}</p>
+        <p>Locatie : {{  echipa.bloc }}</p>
+        <br>
+    {% endfor %}
+{% else %}
+<p>Nu avem voie</p>
+{% endif %}
 </div>
 {%endblock%}
